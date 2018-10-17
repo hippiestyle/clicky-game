@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import FriendCard from "./components/FriendCard";
+import Wrapper from "./components/Wrapper";
 import Title from "./components/Title"; 
 import Nav from "./components/Nav"; 
-import Wrapper from "./components/Wrapper";
-import FriendCard from "./components/FriendCard";
 import Container from "./Container"; 
 import Row from "./Row";
 import Column from "./Column"; 
@@ -11,7 +10,7 @@ import friends from "./friends.json";
 import './App.css';
 
 
-function shufflePictures(array) { 
+function shuffleFriends(array) { 
   for (let i = array.length -1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i+1)); 
     [array[i], array[j]] = [array[j], array[i]]; 
@@ -22,48 +21,48 @@ function shufflePictures(array) {
 class App extends Component {
   state = {
     friends, 
-    yourScore: 0, 
-    highScore: 0,
+    currentScore: 0, 
+    topScore: 0,
     rightWrong: "",
     clicked: [] 
   };
 
 
-  handleClick = key => {
-    if (this.state.clicked.indexOf(key) === -1) {
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
       this.handleIncrement(); 
-      this.setState = ({ clicked: this.state.clicked.concat(key) })
+      this.setState = ({ clicked: this.state.clicked.concat(id) })
     } else { 
       this.handleReset(); 
     }
     }; 
 
     handleIncrement = () => {
-      const newScore = this.state.yourScore + 1; 
+      const newScore = this.state.currentScore + 1; 
       this.setState({
-        yourScore: newScore, 
+        currentScore: newScore, 
         rightWrong: ""
       });
 
-      if (newScore >= this.state.highScore) {
-        this.setState({ highScore: newScore}); 
+      if (newScore >= this.state.topScore) {
+        this.setState({ topScore: newScore}); 
 
       } else if (newScore === 12) {
-        this.setState({rightWrong: "You Win!"});
+        this.setState({ rightWrong: "You Win!" });
       }
       this.handleShuffle(); 
         }; 
       handleReset = () => {
         this.setState({
-          yourScore: 0, 
-          highScore: this.state.highScore,
+          currentScore: 0, 
+          topScore: this.state.topScore,
           rightWrong: "NOT A FRIEND!", 
           clicked: []
         });
         this.handleShuffle(); 
       };
       handleShuffle = () => {
-        let shuffle = shufflePictures(friends); 
+        let shuffle = shuffleFriends(friends); 
         this.setState({ friends: shuffle})
       }; 
 
@@ -72,13 +71,13 @@ class App extends Component {
      <Wrapper>
        <Nav
        title="How Good of a Friend Are You?"
-       score={this.state.yourScore}
-       highScore={this.state.highScore}
+       score={this.state.currentScore}
+       topScore={this.state.currentScore}
        rightWrong={this.state.rightWrong}
         >
          </Nav>
 
-      <Title> This is the title!
+      <Title> How Good of a Friend Are You?
         </Title>
 
         <Container>

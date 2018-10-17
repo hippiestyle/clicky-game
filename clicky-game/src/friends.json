@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "image":"http://www.simpsoncrazy.com/content/pictures/regulars/ComicBookGuy2.gif",
+        "clicked":false 
+    },
+    {
+        "id": 2,
+        "image":"./src/images/cainan.jpg",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "image":"./src/images/casey.jpg",
+        "clicked": false
+    },
+    {
+        "id": 4,
+        "image":"./src/images/cory.jpg",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "image":"./src/images/dom.jpg",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "image":"./src/images/dyl.jpg",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "image":"./src/images/juan.jpg",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "image":"./src/images/mark.jpg",
+        "clicked": false
+    },
+    {
+        "id": 9,
+        "image":"./src/images/marshall.jpg",
+        "clicked": false
+    },
+    {
+        "id": 10,
+        "image":"./src/images/mere.jpg",
+        "clicked": false
+    },
+    {
+        "id": 11,
+        "image":"./src/images/myles.jpg",
+        "clicked": false
+    },
+    {
+        "id": 12,
+        "image":"./src/images/peen.jpg",
+        "clicked": false
+    }
+]
